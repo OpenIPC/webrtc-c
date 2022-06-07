@@ -1,5 +1,5 @@
 #define LOG_CLASS "ChannelInfo"
-#include "../Include_i.h"
+#include "../SignalingInclude.h"
 
 #define ARN_DELIMETER_CHAR                  ':'
 #define ARN_CHANNEL_NAME_CODE_SEP           '/'

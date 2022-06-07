@@ -2,7 +2,7 @@
  * Implementation of a API calls based on LibWebSocket
  */
 #define LOG_CLASS "LwsApiCalls"
-#include "../Include_i.h"
+#include "../SignalingInclude.h"
 
 #include <libwebsockets.h>
 #include "Signaling.h"
