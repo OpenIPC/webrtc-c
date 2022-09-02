@@ -104,7 +104,6 @@ $(document).ready(function(){initNavTree('Include__i_8h.html',''); initResizable
 <div class="textblock"><code>#include &lt;<a class="el" href="Include_8h_source.html">com/amazonaws/kinesis/video/webrtcclient/Include.h</a>&gt;</code><br />
 <code>#include &lt;srtp2/srtp.h&gt;</code><br />
 <code>#include &lt;usrsctp.h&gt;</code><br />
-<code>#include &lt;libwebsockets.h&gt;</code><br />
 <code>#include &lt;signal.h&gt;</code><br />
 <code>#include &lt;sys/types.h&gt;</code><br />
 <code>#include &lt;ifaddrs.h&gt;</code><br />
@@ -114,6 +113,7 @@ $(document).ready(function(){initNavTree('Include__i_8h.html',''); initResizable
 <code>#include &lt;arpa/inet.h&gt;</code><br />
 <code>#include &lt;fcntl.h&gt;</code><br />
 <code>#include &lt;netinet/tcp.h&gt;</code><br />
+<code>#include &lt;poll.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="IOBuffer_8h_source.html">Crypto/IOBuffer.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Crypto_8h_source.html">Crypto/Crypto.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Dtls_8h_source.html">Crypto/Dtls.h</a>&quot;</code><br />
@@ -145,18 +145,70 @@ $(document).ready(function(){initNavTree('Include__i_8h.html',''); initResizable
 <code>#include &quot;<a class="el" href="RtpH264Payloader_8h_source.html">Rtp/Codecs/RtpH264Payloader.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="RtpOpusPayloader_8h_source.html">Rtp/Codecs/RtpOpusPayloader.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="RtpG711Payloader_8h_source.html">Rtp/Codecs/RtpG711Payloader.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="FileCache_8h_source.html">Signaling/FileCache.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Signaling_8h_source.html">Signaling/Signaling.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="ChannelInfo_8h_source.html">Signaling/ChannelInfo.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="StateMachine_8h_source.html">Signaling/StateMachine.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="LwsApiCalls_8h_source.html">Signaling/LwsApiCalls.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Metrics_8h_source.html">Metrics/Metrics.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for Include_i.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="Include__i_8h__incl.png" border="0" usemap="#src_2source_2Include__i_8h" alt=""/></div>
+<map name="src_2source_2Include__i_8h" id="src_2source_2Include__i_8h">
+<area shape="rect" title=" " alt="" coords="3133,5,3295,32"/>
+<area shape="rect" href="Include_8h.html" title=" " alt="" coords="311,80,520,121"/>
+<area shape="rect" title=" " alt="" coords="545,87,641,114"/>
+<area shape="rect" title=" " alt="" coords="665,87,747,114"/>
+<area shape="rect" title=" " alt="" coords="771,87,844,114"/>
+<area shape="rect" title=" " alt="" coords="869,87,965,114"/>
+<area shape="rect" title=" " alt="" coords="989,87,1068,114"/>
+<area shape="rect" title=" " alt="" coords="1092,87,1195,114"/>
+<area shape="rect" title=" " alt="" coords="1219,87,1289,114"/>
+<area shape="rect" title=" " alt="" coords="1314,87,1381,114"/>
+<area shape="rect" title=" " alt="" coords="1405,87,1497,114"/>
+<area shape="rect" title=" " alt="" coords="1521,87,1584,114"/>
+<area shape="rect" title=" " alt="" coords="1609,87,1713,114"/>
+<area shape="rect" title=" " alt="" coords="1737,87,1795,114"/>
+<area shape="rect" href="IOBuffer_8h.html" title=" " alt="" coords="1819,87,1953,114"/>
+<area shape="rect" href="Crypto_8h.html" title=" " alt="" coords="1977,87,2101,114"/>
+<area shape="rect" href="Dtls_8h.html" title=" " alt="" coords="2126,87,2233,114"/>
+<area shape="rect" href="Tls_8h.html" title=" " alt="" coords="2257,87,2357,114"/>
+<area shape="rect" href="Network_8h.html" title=" " alt="" coords="2381,87,2493,114"/>
+<area shape="rect" href="SocketConnection_8h.html" title=" " alt="" coords="2517,87,2690,114"/>
+<area shape="rect" href="ConnectionListener_8h.html" title=" " alt="" coords="2714,87,2895,114"/>
+<area shape="rect" href="Stun_8h.html" title=" " alt="" coords="2919,87,3015,114"/>
+<area shape="rect" href="IceUtils_8h.html" title=" " alt="" coords="3039,87,3146,114"/>
+<area shape="rect" href="Sdp_8h.html" title=" " alt="" coords="3171,87,3257,114"/>
+<area shape="rect" href="IceAgent_8h.html" title=" " alt="" coords="3282,87,3397,114"/>
+<area shape="rect" href="TurnConnection_8h.html" title=" " alt="" coords="3421,87,3578,114"/>
+<area shape="rect" href="IceAgentStateMachine_8h.html" title=" " alt="" coords="3602,87,3805,114"/>
+<area shape="rect" href="NatBehaviorDiscovery_8h.html" title=" " alt="" coords="3829,87,4031,114"/>
+<area shape="rect" href="SrtpSession_8h.html" title=" " alt="" coords="4055,87,4195,114"/>
+<area shape="rect" href="Sctp_8h.html" title=" " alt="" coords="4219,87,4313,114"/>
+<area shape="rect" href="RtpPacket_8h.html" title=" " alt="" coords="4337,87,4461,114"/>
+<area shape="rect" href="RtcpPacket_8h.html" title=" " alt="" coords="4486,87,4625,114"/>
+<area shape="rect" href="RollingBuffer_8h.html" title=" " alt="" coords="4649,87,4800,114"/>
+<area shape="rect" href="RtpRollingBuffer_8h.html" title=" " alt="" coords="4824,87,4996,114"/>
+<area shape="rect" href="JitterBuffer_8h.html" title=" " alt="" coords="5020,87,5229,114"/>
+<area shape="rect" href="PeerConnection_8h.html" title=" " alt="" coords="5254,87,5497,114"/>
+<area shape="rect" href="Retransmitter_8h.html" title=" " alt="" coords="5521,87,5750,114"/>
+<area shape="rect" href="SessionDescription_8h.html" title=" " alt="" coords="5774,87,6038,114"/>
+<area shape="rect" href="Rtp_8h.html" title=" " alt="" coords="6062,87,6225,114"/>
+<area shape="rect" href="Rtcp_8h.html" title=" " alt="" coords="6249,87,6419,114"/>
+<area shape="rect" href="DataChannel_8h.html" title=" " alt="" coords="6443,87,6667,114"/>
+<area shape="rect" href="RtpVP8Payloader_8h.html" title=" " alt="" coords="6691,87,6913,114"/>
+<area shape="rect" href="RtpH264Payloader_8h.html" title=" " alt="" coords="6937,87,7168,114"/>
+<area shape="rect" href="RtpOpusPayloader_8h.html" title=" " alt="" coords="7193,87,7422,114"/>
+<area shape="rect" href="RtpG711Payloader_8h.html" title=" " alt="" coords="7447,87,7677,114"/>
+<area shape="rect" href="Metrics_8h.html" title=" " alt="" coords="7701,87,7836,114"/>
+<area shape="rect" title=" " alt="" coords="5,177,188,218"/>
+<area shape="rect" title=" " alt="" coords="213,177,399,218"/>
+<area shape="rect" href="NullableDefs_8h.html" title=" " alt="" coords="424,169,628,225"/>
+<area shape="rect" href="Stats_8h.html" title=" " alt="" coords="653,177,847,218"/>
+</map>
+</div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="Include__i_8h__dep__incl.png" border="0" usemap="#src_2source_2Include__i_8hdep" alt=""/></div>
 <map name="src_2source_2Include__i_8hdep" id="src_2source_2Include__i_8hdep">
-<area shape="rect" title=" " alt="" coords="4435,5,4598,32"/>
+<area shape="rect" title=" " alt="" coords="3889,5,4051,32"/>
 <area shape="rect" href="Crypto_8c.html" title=" " alt="" coords="5,87,199,114"/>
 <area shape="rect" href="Dtls_8c.html" title=" " alt="" coords="223,87,399,114"/>
 <area shape="rect" href="Dtls__mbedtls_8c.html" title=" " alt="" coords="423,80,589,121"/>
@@ -192,14 +244,15 @@ This graph shows which files directly or indirectly include this file:</div>
 <area shape="rect" href="Sctp_8c.html" title=" " alt="" coords="6742,87,6905,114"/>
 <area shape="rect" href="Deserialize_8c.html" title=" " alt="" coords="6929,87,7133,114"/>
 <area shape="rect" href="Serialize_8c.html" title=" " alt="" coords="7158,87,7345,114"/>
-<area shape="rect" href="ChannelInfo_8c.html" title=" " alt="" coords="7369,80,7521,121"/>
-<area shape="rect" href="Client_8c.html" title=" " alt="" coords="7545,80,7697,121"/>
-<area shape="rect" href="FileCache_8c.html" title=" " alt="" coords="7721,80,7873,121"/>
-<area shape="rect" href="LwsApiCalls_8c.html" title=" " alt="" coords="7897,80,8049,121"/>
-<area shape="rect" href="Signaling_8c.html" title=" " alt="" coords="8073,80,8225,121"/>
-<area shape="rect" href="StateMachine_8c.html" title=" " alt="" coords="8249,80,8401,121"/>
-<area shape="rect" href="SrtpSession_8c.html" title=" " alt="" coords="8425,87,8635,114"/>
-<area shape="rect" href="Stun_8c.html" title=" " alt="" coords="8659,87,8825,114"/>
+<area shape="rect" href="SignalingInclude_8h.html" title=" " alt="" coords="7369,87,7579,114"/>
+<area shape="rect" href="SrtpSession_8c.html" title=" " alt="" coords="7604,87,7813,114"/>
+<area shape="rect" href="Stun_8c.html" title=" " alt="" coords="7838,87,8003,114"/>
+<area shape="rect" href="ChannelInfo_8c.html" title=" " alt="" coords="6958,169,7110,211"/>
+<area shape="rect" href="Client_8c.html" title=" " alt="" coords="7134,169,7286,211"/>
+<area shape="rect" href="FileCache_8c.html" title=" " alt="" coords="7310,169,7462,211"/>
+<area shape="rect" href="LwsApiCalls_8c.html" title=" " alt="" coords="7486,169,7638,211"/>
+<area shape="rect" href="Signaling_8c.html" title=" " alt="" coords="7662,169,7814,211"/>
+<area shape="rect" href="StateMachine_8c.html" title=" " alt="" coords="7838,169,7990,211"/>
 </map>
 </div>
 </div>
@@ -591,7 +644,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_94e7a0fbe7f8eaf7f05ee7b02c647e9f.html">source</a></li><li class="navelem"><a class="el" href="Include__i_8h.html">Include_i.h</a></li>
-    <li class="footer">Generated on Mon Aug 1 2022 18:12:55 for Amazon Kinesis Webrtc C SDK by
+    <li class="footer">Generated on Fri Sep 2 2022 16:12:14 for Amazon Kinesis Webrtc C SDK by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
   </ul>
