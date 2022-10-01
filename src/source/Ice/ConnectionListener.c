@@ -250,6 +250,8 @@ PVOID connectionListenerReceiveDataRoutine(PVOID arg)
 
     CHK(pConnectionListener != NULL, STATUS_NULL_ARG);
 
+    prctl(PR_SET_NAME, "rtcListener");
+
     /* Ensure that memory sanitizers consider
      * rfds initialized even if FD_ZERO is
      * implemented in assembly. */
