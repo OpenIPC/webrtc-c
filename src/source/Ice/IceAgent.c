@@ -368,7 +368,7 @@ STATUS iceAgentAddRemoteCandidate(PIceAgent pIceAgent, PCHAR pIceCandidateString
                 ipBuf[len] = '\0';
                 if (len > 6 && strcmp(ipBuf + len - 6, ".local") == 0) {
                     // don't treat mDNS candidates as error IP addresses
-		    goto CleanUp;
+                    goto CleanUp;
                 } else if ((foundIp = inet_pton(AF_INET, ipBuf, candidateIpAddr.address) == 1 ? TRUE : FALSE)) {
                     candidateIpAddr.family = KVS_IP_FAMILY_TYPE_IPV4;
                 } else if ((foundIp = inet_pton(AF_INET6, ipBuf, candidateIpAddr.address) == 1 ? TRUE : FALSE)) {
