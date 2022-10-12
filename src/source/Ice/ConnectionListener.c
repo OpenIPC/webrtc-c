@@ -250,7 +250,9 @@ PVOID connectionListenerReceiveDataRoutine(PVOID arg)
 
     CHK(pConnectionListener != NULL, STATUS_NULL_ARG);
 
+#ifdef __linux__
     prctl(PR_SET_NAME, "rtcListener");
+#endif
 
     /* Ensure that memory sanitizers consider
      * rfds initialized even if FD_ZERO is
