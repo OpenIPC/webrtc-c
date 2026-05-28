@@ -896,14 +896,26 @@ STATUS populateSingleMediaSection(PKvsPeerConnection pKvsPeerConnection, PKvsRtp
     CHK_ERR(amountWritten > 0, STATUS_INTERNAL_ERROR, "Full rtcp-fb goog-remb could not be written");
     attributeCount++;
 
-    if (pKvsPeerConnection->twccExtId != 0) {
-        STRCPY(pSdpMediaDescription->sdpAttributes[attributeCount].attributeName, "rtcp-fb");
-        amountWritten =
-            SNPRINTF(pSdpMediaDescription->sdpAttributes[attributeCount].attributeValue,
-                     SIZEOF(pSdpMediaDescription->sdpAttributes[attributeCount].attributeValue), "%" PRId64 " " TWCC_SDP_ATTR, payloadType);
-        CHK_ERR(amountWritten > 0, STATUS_INTERNAL_ERROR, "Full rtcp-fb twcc could not be written");
-        attributeCount++;
-    }
+    /* PATCH: always advertise transport-cc rtcp-fb (drop the
+     * twccExtId != 0 gate that prevented TWCC bootstrap), and always
+     * advertise the TWCC RTP header extension extmap so the peer
+     * actually enables it. Without the extmap line the browser never
+     * negotiates the extension and never sends TWCC reports, which
+     * caused the catch-22 documented in kvs-webrtc-twcc-bootstrap-broken. */
+    STRCPY(pSdpMediaDescription->sdpAttributes[attributeCount].attributeName, "rtcp-fb");
+    amountWritten =
+        SNPRINTF(pSdpMediaDescription->sdpAttributes[attributeCount].attributeValue,
+                 SIZEOF(pSdpMediaDescription->sdpAttributes[attributeCount].attributeValue), "%" PRId64 " " TWCC_SDP_ATTR, payloadType);
+    CHK_ERR(amountWritten > 0, STATUS_INTERNAL_ERROR, "Full rtcp-fb twcc could not be written");
+    attributeCount++;
+
+    STRCPY(pSdpMediaDescription->sdpAttributes[attributeCount].attributeName, "extmap");
+    amountWritten =
+        SNPRINTF(pSdpMediaDescription->sdpAttributes[attributeCount].attributeValue,
+                 SIZEOF(pSdpMediaDescription->sdpAttributes[attributeCount].attributeValue),
+                 "3 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01");
+    CHK_ERR(amountWritten > 0, STATUS_INTERNAL_ERROR, "Full extmap twcc could not be written");
+    attributeCount++;
 
     pSdpMediaDescription->mediaAttributesCount = attributeCount;
 
